@@ -25,7 +25,7 @@ def fish(length:float, weight:float):
         weight (float): 물고기 무게(g)
 
     Returns:
-        dict: 물고기 종류를 담은 딕녀서리
+        dict: 물고기 종류를 담은 딕셔너리
     """
     if length > 30.0:
         prediction="도미"
