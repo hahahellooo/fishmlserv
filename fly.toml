@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for fishmieun on 2024-08-30T16:02:06+09:00
+# fly.toml app configuration file generated for fishmieun on 2024-08-30T23:16:50+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -17,6 +17,6 @@ primary_region = 'nrt'
   processes = ['app']
 
 [[vm]]
-  memory = '256mb'
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
