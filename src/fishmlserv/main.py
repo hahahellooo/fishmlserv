@@ -27,12 +27,13 @@ def fish(length:float, weight:float):
     Returns:
         dict: 물고기 종류를 담은 딕셔너리
     """
-    if length > 30.0:
-        prediction="도미"
-    else:
-        prediction="빙어"
+    fish_class = "몰라"
+    #if length > 30.0:
+    #    prediction="도미"
+    #else:
+    #    prediction="빙어"
     return {
-            "prediction": prediction,
+            "prediction": fish_class,
             "length":length, 
             "weight":weight
             }
