@@ -1,7 +1,6 @@
-# 
-#FROM python:3.11
+FROM python:3.11
 #FROM python:3.11.9-slim-bullseye
-FROM python:3.11.9-alpine3.20
+#FROM python:3.11.9-alpine3.20
 # 
 WORKDIR /code
 
@@ -10,8 +9,8 @@ COPY requirements.txt /code/
 #COPY . /code/
 #COPY ./requirements.txt /code/requirements.txt
 
-#RUN pip install git+https://github.com/hahahellooo/fishmlserv.git 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install git+https://github.com/hahahellooo/fishmlserv.git@0.7/manifest
+#RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # 
 # 
