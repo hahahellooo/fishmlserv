@@ -1,5 +1,5 @@
 from typing import Union
-
+import pickle
 from fastapi import FastAPI
 from fishmlserv.model.manager import get_model_path
 
@@ -39,11 +39,14 @@ def fish(length:float, weight:float):
             "weight":weight
             }
 
-@app.get("/model_path")
-def read_model_path():
-    try:
-        model_path = get_model_path()
-        return model_path
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
+ # 모델을 가져와보아요
+    model_path = get_model_path()
+    with open(model_path, 'rb') as f:
+        fish_model = pickle.load(f)
+    fish_class = fish_model.predict([[length, weight]])
+    # fish_name = "몰라"
+    if fish_class == 0:
+        fish_name = "도미"
+    else:
+        fish_name = "빙어"
+    return {"prediction" : fish_name, "lenght" : length, "weight" : weight, "path" : model_path}
