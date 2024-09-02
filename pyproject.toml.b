@@ -6,8 +6,8 @@ authors = [
     {name = "hahahellooo", email = "hahahello777@gmail.com"},
 ]
 dependencies = [
-    "uvicorn[standard]>=0.30.6",
     "fastapi>=0.112.2",
+    "uvicorn[standard]>=0.30.6",
     "matplotlib>=3.9.2",
     "scikit-learn>=1.5.1",
 ]

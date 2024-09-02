@@ -1,6 +1,7 @@
 from typing import Union
 
 from fastapi import FastAPI
+from fishmlserv.model.manager import get_model_path
 
 app = FastAPI()
 
@@ -37,4 +38,12 @@ def fish(length:float, weight:float):
             "length":length, 
             "weight":weight
             }
+
+@app.get("/model_path")
+def read_model_path():
+    try:
+        model_path = get_model_path()
+        return model_path
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
