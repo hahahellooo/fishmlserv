@@ -20,3 +20,9 @@ note = [
     "notebook>=7.2.2",
 ]
 matplotlib = []
+
+[project.scripts]
+get-model-path:fishmlserv.cli:model_path
+run-prediction-fire:fishmlserv.cli:pp
+run-prediction-typer:fishmlserv.cli:ppp
+
