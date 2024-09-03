@@ -6,6 +6,8 @@ authors = [
     {name = "hahahellooo", email = "hahahello777@gmail.com"},
 ]
 dependencies = [
+    "fire>=0.6.0",
+    "typer>=0.12.5",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
