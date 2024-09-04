@@ -5,9 +5,9 @@ from fishmlserv.model.manager import get_model_path
 
 app = FastAPI()
 
-#model_path = get_model_path()
-#with open(model_path, 'rb') as f:
-#    fish_model = pickle.load(f)
+model_path = get_model_path()
+with open(model_path, 'rb') as f:
+    fish_model = pickle.load(f)
 
 @app.get("/")
 def read_root():
@@ -42,9 +42,9 @@ def fish(length:float, weight:float):
     #        }
 
  # 모델을 가져와보아요
-    model_path = get_model_path()
-    with open(model_path, 'rb') as f:
-        fish_model = pickle.load(f)
+#    model_path = get_model_path()
+#    with open(model_path, 'rb') as f:
+#        fish_model = pickle.load(f)
 #    fish_class = fish_model.predict([[length, weight]])
     # fish_name = "몰라"
     fish_class = fish_model.predict([[length, weight]])
